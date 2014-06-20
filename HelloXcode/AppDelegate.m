@@ -14,10 +14,24 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    UILabel *myMessage;
+    myMessage=[[UILabel alloc]
+               initWithFrame:CGRectMake(30.0,50.0,300.0,50.0)];
+    myMessage.font=[UIFont systemFontOfSize:48.0];
+    myMessage.text=@"Hello World";
+    myMessage.textColor = [UIColor colorWithPatternImage:
+                           [UIImage imageNamed:@"Background"]];
+    [self.window addSubview:myMessage];
+    self.window.rootViewController=[UIViewController new];
+    NSLog(@"Hello Xcode (again)");
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+#pragma mark Methods for handling background operations
+#pragma mark -
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
